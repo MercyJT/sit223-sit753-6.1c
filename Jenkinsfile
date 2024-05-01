@@ -27,14 +27,16 @@ pipeline {
             post {
                 success {
                     emailext body: '$DEFAULT_CONTENT',
+                            recipientProviders: [developers(), requestor()],
                             subject: 'sit223-sit753-6.1c - Test Stage - Successful!',
-                            recipientRecipients: 'devacc455@gmail.com',
+                            to: 'devacc455@gmail.com',
                             attachBuildLog: true
                 }
                 failure {
                     emailext body: '$DEFAULT_CONTENT',
+                            recipientProviders: [developers(), requestor()],
                             subject: 'sit223-sit753-6.1c - Test Stage - Failed!',
-                            recipientRecipients: 'devacc455@gmail.com',
+                            to: 'devacc455@gmail.com',
                             attachBuildLog: true
                 }
             }
