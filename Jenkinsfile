@@ -24,6 +24,20 @@ pipeline {
             steps {
                 echo 'Scanning for vulnerabilities with SAST tool (research options)'
             }
+            post {
+                success {
+                    emailext body: '$DEFAULT_CONTENT',
+                            subject: 'sit223-sit753-6.1c - Test Stage - Successful!',
+                            recipientRecipients: 'devacc455@gmail.com',
+                            attachBuildLog: true
+                }
+                failure {
+                    emailext body: '$DEFAULT_CONTENT',
+                            subject: 'sit223-sit753-6.1c - Test Stage - Failed!',
+                            recipientRecipients: 'devacc455@gmail.com',
+                            attachBuildLog: true
+                }
+            }
         }
         stage('Deploy to Staging') {
             steps {
@@ -33,6 +47,20 @@ pipeline {
         stage('Integration Tests on Staging') {
             steps {
                 echo 'Running integration tests on staging environment'
+            }
+            post {
+                success {
+                    emailext body: '$DEFAULT_CONTENT',
+                            subject: 'sit223-sit753-6.1c - Test Stage - Successful!',
+                            recipientRecipients: 'devacc455@gmail.com',
+                            attachBuildLog: true
+                }
+                failure {
+                    emailext body: '$DEFAULT_CONTENT',
+                            subject: 'sit223-sit753-6.1c - Test Stage - Failed!',
+                            recipientRecipients: 'devacc455@gmail.com',
+                            attachBuildLog: true
+                }
             }
         }
         stage('Deploy to Production') {
