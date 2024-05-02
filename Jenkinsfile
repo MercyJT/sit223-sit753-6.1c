@@ -33,7 +33,6 @@ pipeline {
                 }
                 failure {
                     emailext body: '$DEFAULT_CONTENT',
-                            recipientProviders: [developers(), requestor()],
                             subject: 'sit223-sit753-6.1c - Security Scan Stage - Failed!',
                             to: 'terermercyline@gmail.com'
                 }
@@ -51,13 +50,11 @@ pipeline {
             post {
                 success {
                     emailext body: '$DEFAULT_CONTENT',
-                            recipientProviders: [developers(), requestor()],
                             subject: 'sit223-sit753-6.1c - Test Stage - Successful!',
                             to: 'terermercyline@gmail.com'
                 }
                 failure {
                     emailext body: '$DEFAULT_CONTENT',
-                            recipientProviders: [developers(), requestor()],
                             subject: 'sit223-sit753-6.1c - Test Stage - Failed!',
                             to: 'terermercyline@gmail.com'
                 }
