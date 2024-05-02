@@ -28,13 +28,13 @@ pipeline {
                 success {
                     emailext body: '$DEFAULT_CONTENT',
                             subject: 'sit223-sit753-6.1c - Security Scan Stage - Successful!',
-                            recipientRecipients: 'tererwriting@gmail.com, devacc455@gmail.com',
+                            recipientProviders: 'tererwriting@gmail.com, devacc455@gmail.com',
                             attachLog: true
                 }
                 failure {
                     emailext body: '$DEFAULT_CONTENT',
                             subject: 'sit223-sit753-6.1c - Security Scan Stage - Failed!',
-                            recipientRecipients: 'tererwriting@gmail.com, devacc455@gmail.com',
+                            recipientProviders: 'tererwriting@gmail.com, devacc455@gmail.com',
                             attachLog: true
                 }
             }
@@ -52,13 +52,13 @@ pipeline {
                 success {
                     emailext body: '$DEFAULT_CONTENT',
                             subject: 'sit223-sit753-6.1c - Test Stage - Successful!',
-                            recipientRecipients: 'tererwriting@gmail.com, devacc455@gmail.com',
+                            recipientProviders: 'tererwriting@gmail.com, devacc455@gmail.com',
                             attachLog: true
                 }
                 failure {
                     emailext body: '$DEFAULT_CONTENT',
                             subject: 'sit223-sit753-6.1c - Test Stage - Failed!',
-                            recipientRecipients: 'tererwriting@gmail.com, devacc455@gmail.com',
+                            recipientProviders: 'tererwriting@gmail.com, devacc455@gmail.com',
                             attachLog: true
                 }
             }
