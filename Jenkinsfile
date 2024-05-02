@@ -27,14 +27,11 @@ pipeline {
             post {
                 success {
                     emailext body: '$DEFAULT_CONTENT',
-                            recipientProviders: [developers(), requestor()],
-                            subject: 'sit223-sit753-6.1c - Security Scan Stage - Successful!',
-                            to: 'terermercyline@gmail.com'
+                            subject: 'sit223-sit753-6.1c - Security Scan Stage - Successful!'
                 }
                 failure {
                     emailext body: '$DEFAULT_CONTENT',
-                            subject: 'sit223-sit753-6.1c - Security Scan Stage - Failed!',
-                            to: 'terermercyline@gmail.com'
+                            subject: 'sit223-sit753-6.1c - Security Scan Stage - Failed!'
                 }
             }
         }
@@ -50,13 +47,11 @@ pipeline {
             post {
                 success {
                     emailext body: '$DEFAULT_CONTENT',
-                            subject: 'sit223-sit753-6.1c - Test Stage - Successful!',
-                            to: 'terermercyline@gmail.com'
+                            subject: 'sit223-sit753-6.1c - Test Stage - Successful!'
                 }
                 failure {
                     emailext body: '$DEFAULT_CONTENT',
-                            subject: 'sit223-sit753-6.1c - Test Stage - Failed!',
-                            to: 'terermercyline@gmail.com'
+                            subject: 'sit223-sit753-6.1c - Test Stage - Failed!'
                 }
             }
         }
