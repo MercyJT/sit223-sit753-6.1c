@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building code using npm'
+                echo 'Building code using npm...'
             }
         }
         stage('Unit and Integration Tests') {
