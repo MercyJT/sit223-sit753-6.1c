@@ -26,17 +26,14 @@ pipeline {
             }
             post {
                 success {
-                    body: '$DEFAULT_CONTENT',
+                    mail to: 'terermercyline@gmail.com',
                             subject: 'sit223-sit753-6.1c - Security Scan Stage - Successful!',
-                            recipientProviders: [developers(), requestor()],
-                            mail to: 'terermercyline@gmail.com',
-                            attachLog: true
+                            body: '$DEFAULT_CONTENT'
                 }
                 failure {
-                    emailext body: '$DEFAULT_CONTENT',
+                    mail to: 'terermercyline@gmail.com',
                             subject: 'sit223-sit753-6.1c - Security Scan Stage - Failed!',
-                            recipientProviders: [developers(), requestor()],
-                            attachLog: true
+                            body: '$DEFAULT_CONTENT'
                 }
             }
         }
@@ -51,18 +48,14 @@ pipeline {
             }
             post {
                 success {
-                    emailext body: '$DEFAULT_CONTENT',
+                    mail to: 'terermercyline@gmail.com',
                             subject: 'sit223-sit753-6.1c - Test Stage - Successful!',
-                            recipientProviders: [developers(), requestor()],
-                            to: 'terermercyline@gmail.com',
-                            attachLog: true
+                            body: '$DEFAULT_CONTENT'
                 }
                 failure {
-                    emailext body: '$DEFAULT_CONTENT',
+                    mail to: 'terermercyline@gmail.com',
                             subject: 'sit223-sit753-6.1c - Test Stage - Failed!',
-                            recipientProviders: [developers(), requestor()],
-                            to: 'terermercyline@gmail.com',
-                            attachLog: true
+                            body: '$DEFAULT_CONTENT'
                 }
             }
         }
